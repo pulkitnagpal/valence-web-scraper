@@ -1,0 +1,24 @@
+{
+  "name": "web-scraper-assessment",
+  "version": "1.0.0",
+  "private": true,
+  "description": "TypeScript + Playwright scraper for Amazon and Walmart product details",
+  "type": "commonjs",
+  "scripts": {
+    "scrape": "tsx src/scraper.ts",
+    "build": "tsc -p tsconfig.json",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "install:browsers": "playwright install chromium"
+  },
+  "dependencies": {
+    "csv-writer": "^1.6.0",
+    "playwright": "^1.54.2"
+  },
+  "devDependencies": {
+    "@types/node": "^24.3.0",
+    "tsx": "^4.20.5",
+    "typescript": "^5.9.2",
+    "vitest": "^3.2.4"
+  }
+}
