@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { normalizeText, runWithConcurrency, withRetries } from '../src/utils';
+import { ensureValue } from '../src/utils/text';
 
 describe('normalizeText', () => {
   it('normalizes whitespace and trims', () => {
@@ -9,6 +10,11 @@ describe('normalizeText', () => {
   it('returns N/A for empty input', () => {
     expect(normalizeText('   ')).toBe('N/A');
     expect(normalizeText(undefined)).toBe('N/A');
+  });
+
+  it('ensureValue delegates to normalizeText', () => {
+    expect(ensureValue('  hello  ')).toBe('hello');
+    expect(ensureValue(null)).toBe('N/A');
   });
 });
 
